@@ -166,6 +166,8 @@ public class CalculadoraFX extends Application {
             if (evento.getTarget() instanceof Button) {
                String btnaux = ((Button) evento.getTarget()).getText();
                userTextField.setText(userTextField.getText() + btnaux);
+               System.out.println(((Button) evento.getTarget()).getText());
+
             }
         });
 
