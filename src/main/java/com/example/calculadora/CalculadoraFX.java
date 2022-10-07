@@ -5,7 +5,9 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -65,9 +67,14 @@ public class CalculadoraFX extends Application {
         RowConstraints row3 = new RowConstraints();
         row3.setPercentHeight(100/3);
         row3.setVgrow(Priority.ALWAYS);
+
         RowConstraints row4 = new RowConstraints();
         row4.setPercentHeight(100/3);
         row4.setVgrow(Priority.ALWAYS);
+
+        RowConstraints row5 = new RowConstraints();
+        row5.setPercentHeight(100/3);
+        row5.setVgrow(Priority.ALWAYS);
 
         grid.getColumnConstraints().add(column1);
         grid.getColumnConstraints().add(column2);
@@ -77,6 +84,17 @@ public class CalculadoraFX extends Application {
         grid.getRowConstraints().add(row2);
         grid.getRowConstraints().add(row3);
         grid.getRowConstraints().add(row4);
+        grid.getRowConstraints().add(row5);
+
+        Label posx = new Label("Pos X:");
+        Label posy = new Label("Pos Y:");
+        Label valorx = new Label();
+        Label valory = new Label();
+
+        grid.add(posx, 0, 5);
+        grid.add(posy, 0, 6);
+        grid.add(valorx, 1, 5);
+        grid.add(valory, 1, 6);
 
         Scene scene = new Scene(grid, 300 ,275);
         primaryStage.setScene(scene);
@@ -162,17 +180,54 @@ public class CalculadoraFX extends Application {
             userTextField.setText(userTextField.getText() + boton3.getText());
         });*/
 
+        //Filtros
+
+        primaryStage.addEventFilter(MouseEvent.MOUSE_CLICKED, evento-> {
+            //System.out.println(((Button) evento.getTarget()).getText());
+            System.out.println("Filtro del Stage ejecutando");
+        });
+
+        scene.addEventFilter(MouseEvent.MOUSE_CLICKED, evento-> {
+            System.out.println("Filtro de Scene ejecutando");
+        });
+
         grid.addEventFilter(MouseEvent.MOUSE_CLICKED, evento-> {
             if (evento.getTarget() instanceof Button) {
                String btnaux = ((Button) evento.getTarget()).getText();
                userTextField.setText(userTextField.getText() + btnaux);
                System.out.println(((Button) evento.getTarget()).getText());
-
             }
         });
 
+        //Handlers
+
+        primaryStage.addEventHandler(MouseEvent.MOUSE_CLICKED, evento-> {
+            System.out.println("Handler de Stage ejecutando");
+        });
+
+        scene.addEventHandler(MouseEvent.MOUSE_CLICKED, evento-> {
+            System.out.println("Handler de Scene ejecutando");
+        });
+
+        grid.addEventHandler(MouseEvent.MOUSE_CLICKED, evento-> {
+            System.out.println("Handler de Grid ejecutando");
+        });
+
+        primaryStage.setScene(scene);
+
+        scene.setOnMouseClicked(evento-> {
+            System.out.println("X: " + evento.getX());
+            System.out.println("Y: " + evento.getY());
+            double valor1 = evento.getX();
+            double valor2 = evento.getY();
+            String valora = Double.toString(valor1);
+            String valorb = Double.toString(valor2);
+            valorx.setText(valora);
+            valory.setText(valorb);
+        });
 
         primaryStage.setTitle("Calculadora");
+
         primaryStage.show();
 
 
