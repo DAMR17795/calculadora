@@ -62,6 +62,7 @@ public class HelloController {
 
     @FXML
     public void escribirOcho(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn8.getText());
     }
 
     @FXML
@@ -70,6 +71,7 @@ public class HelloController {
 
     @FXML
     public void escribirCuatro(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn4.getText());
     }
 
     @FXML
@@ -78,6 +80,7 @@ public class HelloController {
 
     @FXML
     public void escribirCinco(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn5.getText());
     }
 
     @FXML
@@ -86,6 +89,7 @@ public class HelloController {
 
     @FXML
     public void escribirUno(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn1.getText());
     }
 
     @FXML
@@ -94,6 +98,7 @@ public class HelloController {
 
     @FXML
     public void escribirDos(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn2.getText());
     }
 
     @FXML
@@ -102,6 +107,7 @@ public class HelloController {
 
     @FXML
     public void escribirTres(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn3.getText());
     }
 
     @FXML
@@ -110,6 +116,7 @@ public class HelloController {
 
     @FXML
     public void escribirSeis(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn6.getText());
     }
 
     @FXML
@@ -118,6 +125,7 @@ public class HelloController {
 
     @FXML
     public void escribirNueve(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn9.getText());
     }
 
     @FXML
@@ -126,6 +134,7 @@ public class HelloController {
 
     @FXML
     public void escribirCero(ActionEvent actionEvent) {
+        pantallaLabel.setText(pantallaLabel.getText() + btn0.getText());
     }
 
     @FXML
