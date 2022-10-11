@@ -18,7 +18,7 @@ public class calc extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        stage.setTitle("Calculadora");
         stage.minHeightProperty().set(400);
         stage.minWidthProperty().set(600);
         stage.setScene(scene);
